@@ -8,11 +8,12 @@ namespace Lotto
         {
             Random rnd = new Random();
             byte randomNumber, guessedNumber;
+            randomNumber = (byte)rnd.Next(0, 101);
             int numberOfAttempts=0;
+
             while (true)
             {
                 Console.Write("Wpisz liczbę od 0 do 100: "); 
-                randomNumber = (byte)rnd.Next(0, 101);
                 numberOfAttempts++;
                 if (!byte.TryParse(Console.ReadLine(), out guessedNumber) || guessedNumber > 100)
                 {
